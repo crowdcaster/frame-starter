@@ -16,7 +16,7 @@ const handleRequest = frames(async (ctx) => {
       buttons: [
         <Button
           action="link"
-          target={`https://www.onceupon.gg/tx/${ctx.message.transactionId}`}
+          target={`https://www.onceupon.gg/tx/${ctx.message.transactionId}`} 
         >
           View on block explorer
         </Button>,
