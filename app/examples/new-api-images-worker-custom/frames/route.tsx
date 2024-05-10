@@ -1,12 +1,15 @@
 import { frames } from "./frames";
+import Image from "next/image";
+import next from "next";
 
 const handler = frames(async (ctx) => {
   return {
-    image: (
-      <div tw="flex text-[52px]">
-        Hello <span tw="ml-2 font-bold flex">world</span>
-      </div>
-    ),
+    image: "https://placekitten.com/200/300",
+    // We can generate the image and render it here
+    imageOptions:{
+      aspectRatio: '1:1',
+    },
+    textInput:'fuck this shit', 
   };
 });
 
