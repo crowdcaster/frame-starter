@@ -27,7 +27,7 @@ export default async function Home() {
         Debug
       </Link>{" "}
       or see{" "}
-      <Link href="/examples" className="underline">
+      <Link href="/donate" className="underline">
         other examples
       </Link>
     </div>
