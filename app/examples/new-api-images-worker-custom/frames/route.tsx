@@ -1,17 +1,22 @@
+/* eslint-disable react/jsx-key */
+import { Button } from "frames.js/next";
 import { frames } from "./frames";
-import Image from "next/image";
-import next from "next";
 
 const handler = frames(async (ctx) => {
   return {
     image: "https://placekitten.com/200/300",
-    // We can generate the image and render it here
-    imageOptions:{
-      aspectRatio: '1:1',
+    imageOptions: {
+      aspectRatio: '1:1'
     },
-    textInput:'fuck this shit', 
+    buttons: [
+      <Button action="post">Donate</Button>,
+      <Button action="post" target="/next">
+        Report Scam
+      </Button>,
+    ],
   };
 });
+
 
 export const GET = handler;
 export const POST = handler;
