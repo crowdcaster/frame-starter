@@ -21,8 +21,8 @@ export default function ExamplesIndexPage() {
           </Link>
         </li>
         <li>
-          <Link className="underline" href="/donate/new-api-mint-button">
-            Mint button
+          <Link className="underline" href="/create-fundraise/new-api-form">
+            Create Fundraise Campaign
           </Link>
         </li>
         <li>

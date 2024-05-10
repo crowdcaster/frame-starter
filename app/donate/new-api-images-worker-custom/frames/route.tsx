@@ -14,7 +14,7 @@ const handler = frames(async (ctx) => {
       buttons: [
         <Button
           action="tx"
-          target={`/txdata`} // where to redirect??????
+          target={`/txdata`}
         >
           Donate
         </Button>,
