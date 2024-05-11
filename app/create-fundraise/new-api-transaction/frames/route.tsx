@@ -2,7 +2,7 @@
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
 import { keccak256, toHex } from "viem";
-import { getAddressForFid, getFrameMessage } from "frames.js";
+import { getAddressForFid, getFrameMessage, validateFrameMessage } from "frames.js";
 import { FidRequest } from "@farcaster/core";
 import { FrameActionPayload } from "frames.js";
 import { NextRequest, NextResponse } from "next/server";
@@ -15,17 +15,12 @@ async function getResponse(
   const body: FrameActionPayload = await req.json();
   const id = params.id;
 
-  // const { isValid, message } = await validateFrameMessage(body);
+  const { isValid, message } = await validateFrameMessage(body);
 
-  const message = await getFrameMessage(body);
+  const frameMessage = await getFrameMessage(body);
 
   console.log(message);
-
-  try {
-
-  } catch (e) {
-    return new NextResponse(tryAgainResponse(e.message));
-  }
+  return message as any;
 }
 
 const checkIfValidTransactionAccount = async (account: number) => {
@@ -37,7 +32,7 @@ const checkIfValidTransactionAccount = async (account: number) => {
   let nonceString = toHex("dorcopio");
   const nonce = keccak256(nonceString);
 
-  return address;
+  return address //keccak256(nonce, address);
 };
 
 const handleRequest = frames(async (ctx) => {
