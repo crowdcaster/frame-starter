@@ -3,16 +3,19 @@ import { frames } from "../frames";
 import { Button } from "frames.js/next";
 
 export const POST = frames(async (ctx) => {
-  const foo = ctx.searchParams.foo;
 
   return {
-    image: <div tw="flex">Route 1 foo: {foo}</div>, // foo: bar
+    image: <div tw="flex">Route 1 foo</div>, // foo: bar
+    textInput: "Enter amount",
     buttons: [
+      <Button
+        action="tx"
+        target="/txdata" post_url="/frames"
+      >
+        Donate
+      </Button>,
       <Button action="post" target="/">
         Go back
-      </Button>,
-      <Button action="post" target="/route2">
-        Go to route 2
       </Button>,
     ],
   };

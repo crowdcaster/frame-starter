@@ -619,5 +619,38 @@ export const erc20Abi = [
         ],
         "stateMutability": "view",
         "type": "function"
-    }
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "goalAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "deadline",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "minimumDonation",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "beneficiary",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "createCampaign",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
 ]

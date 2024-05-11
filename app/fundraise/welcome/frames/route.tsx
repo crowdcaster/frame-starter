@@ -4,18 +4,18 @@ import { Button } from "frames.js/next";
 
 const handler = frames(async () => {
   return {
-    image: <div tw="flex">Welcome</div>,
+    image: <div tw="flex">Welcome cocksucker</div>,
     buttons: [
       // With query params
       <Button
         action="post"
-        target={{ pathname: "/route1", query: { foo: "bar" } }}
+        target={{ pathname: "/create-fundraise" }}
       >
-        Go to route 1
+        Create a Campaign
       </Button>,
       // Without query params
-      <Button action="post" target="/route2">
-        Go to route 2
+      <Button action="post" target="/donate">
+        Fund me
       </Button>,
     ],
   };

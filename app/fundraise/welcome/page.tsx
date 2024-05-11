@@ -10,14 +10,14 @@ export async function generateMetadata(): Promise<Metadata> {
     description: "This is a new api example",
     other: {
       ...(await fetchMetadata(
-        new URL("/donate/new-api-multi-page/frames", appURL())
+        new URL("/fundraise/welcome/frames", appURL())
       )),
     },
   };
 }
 
 export default async function Home() {
-  const url = currentURL("/donate/new-api-multi-page");
+  const url = currentURL("/fundraise/welcome");
 
   return (
     <div>
