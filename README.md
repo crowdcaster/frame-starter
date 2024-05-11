@@ -1,13 +1,10 @@
-# Frames.js Starter Kit
-
-This is a boilerplate repo to get started quickly with `frames.js`
+# Team CrowdCaster Starting Point
 
 ## Quickstart
 
-If running from the frames.js repository itself:
+If running from the repository itself:
 
 - Run `yarn` from the repository root
-- Run `cd examples/framesjs-starter`
 
 1. Install dependencies `yarn install`
 
@@ -15,26 +12,13 @@ If running from the frames.js repository itself:
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-4. Edit `app/page.tsx`
-
-5. Visit [http://localhost:3000/debug](http://localhost:3000/debug) to debug your frame.
-
-6. (Optional) To use a real signer (costs warps), copy `.env.sample` to `.env` and fill in the env variables following the comments provided
+4. Visit [http://localhost:3000/debug](http://localhost:3000/debug) to debug your frame.
 
 ## Docs, Questions and Help
 
-- [Frames.js Documentation](https://framesjs.org)
-- [Awesome frames](https://github.com/davidfurlong/awesome-frames?tab=readme-ov-file)
-- Join the [/frames-dev](https://warpcast.com/~/channel/frames-devs) channel on Farcaster to ask questions
+We are super available to provide with help and we cannot wait to hear feedbacks from you!
+If you see us around the venue, just talk to us!
 
-## If you get stuck or have feedback, [Message @df please!](https://warpcast.com/df)
+Thanks!!!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy
-
-```bash
-vercel
-```
-
-more deployment links coming soon, PRs welcome!
+Team CrowdCaster
