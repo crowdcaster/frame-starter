@@ -2,16 +2,17 @@
 import { frames } from "../frames";
 import { Button } from "frames.js/next";
 
-export const POST = frames(async () => {
+export const POST = frames(async (ctx) => {
+
   return {
-    image: <div tw="flex">Create a new fundraise</div>,
-    textInput: "Explain about your campaign",
+    image: <div tw="flex">Donate</div>, // foo: bar
+    textInput: "Enter amount",
     buttons: [
       <Button
         action="tx"
-        target="/txdata/add-campaign" post_url="/frames"
+        target={{ pathname: "/txdata/approve", query: { campaign_id: 1, amount: ctx.message?.inputText } }} post_url={{ pathname: "/donate" }}
       >
-        Create campaign
+        Approve
       </Button>,
       <Button action="post" target="/">
         Go back

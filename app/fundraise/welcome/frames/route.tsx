@@ -4,7 +4,7 @@ import { Button } from "frames.js/next";
 
 const handler = frames(async () => {
   return {
-    image: <div tw="flex">Welcome cocksucker</div>,
+    image: <div tw="flex">Welcome to Crewcaster</div>,
     buttons: [
       // With query params
       <Button
@@ -14,7 +14,7 @@ const handler = frames(async () => {
         Create a Campaign
       </Button>,
       // Without query params
-      <Button action="post" target="/donate">
+      <Button action="post" target="/approve">
         Fund me
       </Button>,
     ],

@@ -10,7 +10,7 @@ import {
   toBytes,
   toHex,
 } from "viem";
-import { simpleCampaign } from "./contracts/simple-campaign";
+import { simpleCampaign } from "../contracts/simple-campaign";
 import { optimismSepolia } from "viem/chains";
 
 export async function POST(
@@ -24,7 +24,7 @@ export async function POST(
     throw new Error("No frame message");
   }
   const DORCO_PIO_ADDRESS = "0x481d58029881a2841e2e6Ba3701Ae55f45fFD406";
-  const SIMPLE_CAMPAIGN_ADDRESS = "0x8d6448593bfDc94e697F9bc26F5b66c7DfcA563f"
+  const SIMPLE_CAMPAIGN_ADDRESS = "0x1d8bCf5422e150509C872d8d375120eA0628AC93"
   const data = [10e18, 3600, 100, "0x6Fc92609e4083678a3F41CeffA2d1d036F984fD5", DORCO_PIO_ADDRESS, toHex('name'), toHex('description')]
 
   const calldata = encodeFunctionData({
