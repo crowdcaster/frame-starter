@@ -31,12 +31,18 @@ export async function POST(
     args: ['0x6Fc92609e4083678a3F41CeffA2d1d036F984fD5', 1e18],
   });
 
+  const DORCO_PIO_ADDRESS = "0x481d58029881a2841e2e6Ba3701Ae55f45fFD406";
   const publicClient = createPublicClient({
     chain: optimismSepolia,
     transport: http(),
   });
+  const storageRegistry = getContract({
+    address: DORCO_PIO_ADDRESS,
+    abi: erc20Abi,
+    client: publicClient,
+  });
 
-  const DORCO_PIO_ADDRESS = "0x481d58029881a2841e2e6Ba3701Ae55f45fFD406";
+
 
   const dorcoPio = getContract({
     address: DORCO_PIO_ADDRESS,
@@ -44,17 +50,16 @@ export async function POST(
     client: publicClient,
   });
 
-  const unitPrice = await dorcoPio.read.balanceOf(publicClient.account);
-  const price = unitPrice ? unitPrice : 0
 
+  const unitPrice = 0;
   return NextResponse.json({
     chainId: "eip155:11155420", // OP Mainnet 10
     method: "eth_sendTransaction",
     params: {
-      abi: erc20Abi,
+      abi: erc20Abi as Abi,
       to: DORCO_PIO_ADDRESS,
       data: calldata,
-      value: price.toString(),
+      value: unitPrice.toString(),
     },
   });
 }
