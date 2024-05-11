@@ -11,9 +11,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@allo-team/allo-v2-sdk": "^1.0.71",
+    "@apollo/client": "^3.10.3",
+    "@farcaster/core": "^0.14.11",
     "@vercel/kv": "^1.0.1",
     "@xmtp/frames-validator": "^0.5.0",
     "clsx": "^2.1.0",
+    "ethers": "^6.12.1",
     "frames.js": "^0.15.2",
     "ipfs-http-client": "^60.0.1",
     "next": "^14.1.4",

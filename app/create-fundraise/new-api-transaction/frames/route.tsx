@@ -1,6 +1,44 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
+import { keccak256, toHex } from "viem";
+import { getAddressForFid, getFrameMessage } from "frames.js";
+import { FidRequest } from "@farcaster/core";
+import { FrameActionPayload } from "frames.js";
+import { NextRequest, NextResponse } from "next/server";
+
+
+async function getResponse(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+): Promise<NextResponse> {
+  const body: FrameActionPayload = await req.json();
+  const id = params.id;
+
+  // const { isValid, message } = await validateFrameMessage(body);
+
+  const message = await getFrameMessage(body);
+
+  console.log(message);
+
+  try {
+
+  } catch (e) {
+    return new NextResponse(tryAgainResponse(e.message));
+  }
+}
+
+const checkIfValidTransactionAccount = async (account: number) => {
+  const address = await getAddressForFid({
+    fid: account,
+    options: { fallbackToCustodyAddress: true },
+  });
+
+  let nonceString = toHex("dorcopio");
+  const nonce = keccak256(nonceString);
+
+  return address;
+};
 
 const handleRequest = frames(async (ctx) => {
   if (ctx.message?.transactionId) {

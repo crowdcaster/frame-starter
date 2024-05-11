@@ -1,6 +1,8 @@
 import { TransactionTargetResponse } from "frames.js";
 import { getFrameMessage } from "frames.js/next/server";
 import { NextRequest, NextResponse } from "next/server";
+import { Registry } from "@allo-team/allo-v2-sdk/";
+
 import {
   Abi,
   createPublicClient,

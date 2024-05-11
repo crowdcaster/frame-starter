@@ -6,8 +6,8 @@ import { appURL, currentURL } from "./utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "frames.js starter",
-    description: "This is a frames.js starter template",
+    title: "crowdcaster frames",
+    description: "This is the new crowdcaster frames app.",
     other: {
       ...(await fetchMetadata(new URL("/frames", appURL()))),
     },
@@ -20,16 +20,12 @@ export default async function Home() {
 
   // then, when done, return next frame
   return (
-    <div className="p-4">
-      frames.js starter kit. The Template Frame is on this page, it&apos;s in
-      the html meta tags (inspect source).{" "}
-      <Link href={createDebugUrl(url)} className="underline">
+    <div className="text-xl text-center inline-block p-4">
+      This is the new crowdcaster frames app.{" "}
+      It has been made for the ETHBratislava hackathon.{" "}
+      {/* <Link href={createDebugUrl(url)} className="underline">
         Debug
-      </Link>{" "}
-      or see{" "}
-      <Link href="/donate" className="underline">
-        other examples
-      </Link>
+      </Link>{" "} */}
     </div>
   );
 }
